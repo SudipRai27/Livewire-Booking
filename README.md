@@ -1,6 +1,6 @@
 # About
 
-A simple booking appointments demo with livewire. This also has multi step form for registration and profile edit using livewire
+A simple booking appointments demo with livewire. This also has multi step form for both registration and profile edit using livewire.
 
 #### `Backend: Laravel 8.12`
 
