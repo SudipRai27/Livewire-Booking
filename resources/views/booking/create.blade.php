@@ -9,11 +9,11 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
-                    <br>
-                    <a href="{{ route('profile.edit') }}" style="color:red;">Edit my profile</a>
-                    <br>
-                    <a href="{{ route('booking.create') }}" style="color:red;">Create a booking</a>
+                    <h3>Create booking</h3>
+
+                    @foreach ($slots as $slot)
+                        {{ $slot }}<br>
+                    @endforeach
                 </div>
             </div>
         </div>

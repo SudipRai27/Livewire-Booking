@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BookingController;
+use App\Http\Livewire\Booking\CreateBooking;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,14 +20,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+require __DIR__ . '/auth.php';
 
 Route::group(['middleware' => 'auth'], function () {
-
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-
     Route::get('/edit-profile', [ProfileController::class, 'edit'])->name('profile.edit');
-});
 
-require __DIR__ . '/auth.php';
+    ///////////////// Booking routes ////////////////
+    Route::prefix('booking')->group(function () {
+        // Route::get('create', [BookingController::class, 'create'])->name('booking.create');
+        Route::get('create', CreateBooking::class)->name('booking.create');
+    });
+});
