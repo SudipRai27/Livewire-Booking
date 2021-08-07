@@ -23,6 +23,7 @@ class CreateAppointmentsTable extends Migration
             $table->time('start_time');
             $table->time('end_time');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->timestamp('cancelled_at')->nullable();
             $table->timestamps();
         });
     }
